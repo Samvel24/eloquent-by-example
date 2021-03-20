@@ -11,10 +11,9 @@ class DogsTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('dogs')->truncate();
-        \DB::table('dogs')->insert(['name' => 'Joe']);
-        \DB::table('dogs')->insert(['name' => 'Jock']);
-        \DB::table('dogs')->insert(['name' => 'Jackie']);
-        \DB::table('dogs')->insert(['name' => 'Jane']);
+        \App\Dog::truncate();
+        (new Faker\Generator)->seed(123);
+    
+        factory(App\Dog::class, 50)->create();
     }
 }

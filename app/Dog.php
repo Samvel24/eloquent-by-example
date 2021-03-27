@@ -8,7 +8,8 @@ use SoftDeletes;
 
 class Dog extends Model
 {
-    protected $dates = ['deleted_at'];
+    //protected $dates = ['deleted_at'];
+    protected $dates = ['birthday'];
 
     function scopeAgeGreaterThan($query, $age) // scope = alcance o ambito
     {
@@ -20,12 +21,27 @@ class Dog extends Model
         return $this->ageGreaterThan(6);
     }
 
-    protected static function boot()
+    /*protected static function boot()
     {
         parent::boot();
 
         static::addGlobalScope('age', function (Builder $builder) {
             $builder->where('age', '>', 8);
         });
+    }*/
+
+    function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
+
+    function getIdNameAttribute()
+    {
+        return $this->attributes['id'] . ':' . $this->attributes['name'];
+    }
+
+    function setNameAttribute($value)
+    {
+        return $this->attributes['name'] = strtoupper($value);
     }
 }

@@ -8,8 +8,8 @@ use SoftDeletes;
 
 class Dog extends Model
 {
-    //protected $dates = ['deleted_at'];
-    protected $dates = ['birthday'];
+    protected $dates = ['deleted_at'];
+    protected $fillable = ['name', 'age'];
 
     function scopeAgeGreaterThan($query, $age) // scope = alcance o ambito
     {

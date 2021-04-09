@@ -31,3 +31,10 @@ Route::get('cats', function(){
         ['info' => json_encode(['name' => 'Igor', 'long-hair' => true])]
     );
 });
+
+Route::get('hamsters', function(){
+    $user = \App\User::find(1);
+    $hamster = new \App\Hamster(['name' => 'Furry']);
+
+    $user->hamsters()->save($hamster); // Se usa la relacion entre usuario y hamster para guardar un registro en base de datos
+});

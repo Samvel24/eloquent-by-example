@@ -31,11 +31,11 @@ class ConsultasWhereWhenController extends Controller
             ->when($ageGroup == 'older',
                 function($q)
                 {
-                    return $q->where('age','>', 8);
+                    return $q->where('age', '>', 8);
                 },
                 function($q)
                 {
-                return $q->where('age','<', 8);
+                    return $q->where('age', '<', 8);
                 }
         );
 

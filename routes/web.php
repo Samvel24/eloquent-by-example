@@ -17,3 +17,17 @@ Route::get('/', function () {
 
 Route::get('/consultaWhere', 'ConsultasWhereWhenController@consultaWhere');
 Route::get('/consultaWhen', 'ConsultasWhereWhenController@consultaWhen');
+
+Route::get('cats', function(){
+    \App\Cat::create(
+        ['info' => json_encode(['name' => 'Fluffy', 'long-hair' => true])]
+    );
+
+    \App\Cat::create(
+        ['info' => json_encode(['name' => 'Furball', 'long-hair' => false])]
+    );
+
+    \App\Cat::create(
+        ['info' => json_encode(['name' => 'Igor', 'long-hair' => true])]
+    );
+});

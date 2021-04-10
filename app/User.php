@@ -29,6 +29,6 @@ class User extends Authenticatable
 
     public function hamsters() 
     {
-        return $this->hasMany('App\Hamster');
+        return $this->belongsToMany('App\Hamster')->withPivot('role');
     }
 }

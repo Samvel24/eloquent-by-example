@@ -13,7 +13,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // listen() permite ver las consultas SQL sin formato que genera Eloquent. 
+        // Ver: https://laravel.com/docs/5.5/database#listening-for-query-events
+        /*\DB::listen(function ($event) {
+            dump($event->sql);
+            dump($event->bindings);
+        });*/
     }
 
     /**

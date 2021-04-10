@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Hamster')->withPivot('role');
     }
+
+    public function gerbils()
+    {
+        return $this->hasMany('App\Hamster');
+    }
 }

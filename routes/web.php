@@ -38,3 +38,6 @@ Route::get('hamsters', function(){
 
     $user->hamsters()->save($hamster); // Se usa la relacion entre usuario y hamster para guardar un registro en base de datos
 });
+
+Route::get('nombresusuarios', 'HamsterController@nombresUsuariosHamster');
+Route::get('metodosvspropdinamica', 'HamsterController@metodoRelacionVsPropiedadDinamica');

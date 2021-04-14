@@ -45,3 +45,4 @@ Route::get('metodosvspropdinamica', 'HamsterController@metodoRelacionVsPropiedad
 Route::get('tarea1', 'TareaController@dueniosHamsters');
 Route::get('tarea2', 'TareaController@usuariosYcantidadHamsters');
 Route::get('tarea3', 'TareaController@nombreEmpiezaConF');
+Route::get('colecciones', 'CollectionController@devolucionUnicaVsDevolucionmultiple');
